@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    <link rel="stylesheet" type="text/css" href="./frontend/css/stil.css" />
+    <title>Stikit</title>
+</head>
+
+<body>
+    <header class="vrh">
+        <label class="naslov">STIKIT</label>
+    </header>
+
+    <ul class="gdje_su_gumbi">
+        <img src="./frontend/css/slika.png" class="slika">
+        <li><a href="index.php?rt=" class="button">HOME</a></li>
+        <li><a href="index.php?rt=explore" class="button">EXPLORE</a></li>
+        <li><a href="index.php?rt=user" class="buttonn" id="userBtn"></a></li>
+        <li><a href="index.php?rt=add" class="buttonnn">+</a></li>
+        <li><a href="index.php?rt=logout" class="button">LOGOUT</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="row">
+            <label>Uređivanje stickera</label>
+            <div id="display_image_div">
+                <img name="display_image_data" id="display_image_data" src="./frontend/css/dummy-image.png"
+                    alt="Picture">
+            </div>
+            <div class="col-lg-6" align="center">
+                <!--<br><br><br><br><br><br>-->
+                <input type="hidden" name="cropped_image_data" id="cropped_image_data">
+                <br>
+                <input type="file" name="browse_image" id="browse_image" class="form-control">
+                <br>
+            </div>
+            <div class="col-lg-7" align="center">
+                <label>Tagovi: </label>
+                <input type="text" id="hashtags" class="w-100 form-control" />
+            </div>
+            <div class="col-lg-5" align="center">
+                <button type="button" class="btn btn-outline-success" id="crop_button">Prikaži</button>
+                <button type="button" class="btn btn-outline-success" id="download_button"
+                    onclick="download()">Preuzmi</button>
+                <button type="button" class="btn btn-outline-success" id="upload_button"
+                    onclick="upload()">Spremi</button>
+            </div>
+        </div>
+        <div class="col-lg-3" align="center">
+            <label>Prikaz</label>
+            <div id="cropped_image_result">
+                <img style="width: 250px;" src="./frontend/css/dummy-image.png" />
+            </div>
+            <br>
+            <label>Oblik:</label>
+            <br>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="round_crop_button">Krug</button>
+                <button type="button" class="btn btn-outline-primary" id="square_crop_button">Kvadrat</button>
+            </div>
+            <br><br>
+            <label>Rotiraj:</label>
+            <br>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="rotate_right_button">Desno</button>
+                <button type="button" class="btn btn-outline-primary" id="rotate_left_button">Lijevo</button>
+            </div>
+            <br><br>
+            <label>Zrcali:</label>
+            <br>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="flip_horizontal_button">Vodoravno</button>
+                <button type="button" class="btn btn-outline-primary" id="flip_vertical_button">Okomito</button>
+            </div>
+            <br><br>
+            <label>Zoom:</label>
+            <br>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="zoom_in_button">+</button>
+                <button type="button" class="btn btn-outline-primary" id="zoom_out_button">-</button>
+            </div>
+            <br><br>
+            <label>Pomak:</label>
+            <br>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-primary" id="move_up_button">Gore</button>
+                <br><br>
+                <button type="button" class="btn btn-outline-primary" id="move_down_button">Dolje</button>
+                <button type="button" class="btn btn-outline-primary" id="move_left_button">Lijevo</button>
+                <br><br>
+                <button type="button" class="btn btn-outline-primary" id="move_right_button">Desno</button>
+            </div>
+            <br><br><br>
+        </div>
+        <div class="col-lg-2" align="center">
+            <div class="scroll">
+                <label>Zamagljenje</label>
+                <input type="range" min="0" max="10" value="0" step="1" data-filter="blur" data-scale="px"><br>
+                <label>Svjetlina</label>
+                <input type="range" min="50" max="150" value="100" step="1" data-filter="brightness" data-scale="%"><br>
+                <label>Kontrast</label>
+                <input type="range" min="70" max="130" value="100" step="1" data-filter="contrast" data-scale="%"><br>
+                <label>Nijansa sive</label>
+                <input type="range" min="0" max="100" value="0" step="1" data-filter="grayscale" data-scale="%"><br>
+                <label>Negativ</label>
+                <input type="range" min="0" max="100" value="0" step="1" data-filter="invert" data-scale="%"><br>
+                <label>Neprozirnost</label>
+                <input type="range" min="20" max="100" value="100" step="1" data-filter="opacity" data-scale="%"><br>
+                <br>
+
+                <input type="text" id="text_input" class="form-control" />
+                <br>
+                <button type="button" class="btn btn-outline-primary" id="add_text_button">Dodaj tekst</button>
+                <div id="cropped_image_container"></div>
+                <br>
+                <div class="form-group">
+                    <label for="text_color">Boja teksta:</label>
+                    <input type="color" id="text_color" class="form-control" value="#000000" />
+                    <br>
+                    <label for="font_family">Font:</label>
+                    <select id="font_family" class="form-control">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Georgia">Georgia</option>
+                    </select>
+                    <br>
+                    <label for="font_number">Veličina fonta:</label>
+                    <br>
+                    <input type="text" id="font_number" class="form_number" />
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./frontend/javascript/sticker.js"></script>
+    <script src="./frontend/javascript/dohvatiKorisnika.js"></script>
+</body>
+
+</html>

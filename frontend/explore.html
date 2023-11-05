@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/stil.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <title>Stikit</title>
+</head>
+<body>
+	<header class="vrh">
+	    <label class="naslov">STIKIT</label>
+    </header>
+		
+    <ul class="gdje_su_gumbi">
+        <img src="./frontend/css/slika.png" class="slika">
+        <li><a href="index.php?rt=" class="button">HOME</a></li>
+        <li><a href="index.php?rt=explore" class="button">EXPLORE</a></li>
+        <li><a href="index.php?rt=user" class="buttonn" id="userBtn"></a></li>
+        <li><a href="index.php?rt=add" class="buttonnn">+</a></li>
+        <li><a href="index.php?rt=logout" class="button">LOGOUT</a></li>
+    </ul>
+
+    <div class="searchExplore">
+        <input type="text" class="txt" id="searchInput">
+        <button class="search_btn" id="searchBtn">Search</button>
+    </div>
+    
+    <div id="stickers-container"></div>
+
+    <script src="./frontend/javascript/explore.js"></script>
+    <script src="./frontend/javascript/dohvatiKorisnika.js"></script>
+</body>
+</html>

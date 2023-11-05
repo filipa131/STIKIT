@@ -1,0 +1,370 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-image: url('pozadina.jpg');
+    background-size: cover;
+    background-repeat: space;
+    background-attachment: fixed;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    overflow: -moz-scrollbars-none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    color: rgba(0, 14, 94, 0.438);
+    text-align: center;
+    font-family: Papyrus;
+}
+
+img {
+    max-width: 800px;
+}
+
+.scroll {
+    margin: 20px auto;
+}
+
+.container {
+    font-family: Papyrus;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zahvala {
+    font-family: Papyrus;
+    font-size: 500%;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.nema {
+    font-family: Papyrus;
+    font-size: 150%;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.error-message {
+    font-size: 100%;
+    color: rgba(1, 21, 131, 0.912);
+    text-align: center;
+}
+
+.vrh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: wavy;
+    color: rgba(0, 14, 94, 0.438);
+    font-family: Papyrus;
+    font-size: 300%;
+    margin-bottom: -8%;
+}
+
+.naslov {
+    margin-right: 10px;
+    text-decoration: wavy;
+    color: rgba(0, 14, 94, 0.438);
+    font-family: Papyrus;
+    font-size: 300%;
+}
+
+.login {
+    background-color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    text-align: center;
+    color: rgb(0, 37, 139);
+    font-size: 125%;
+    font-family: monospace;
+
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgb(64, 104, 165);
+    border-radius: 10px;
+
+    height: 430px;
+    width: 500px;
+}
+
+.txt {
+    box-shadow: 0 4px 8px rgb(64, 104, 165);
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#login-form input[type="text"]::placeholder,
+#login-form input[type="password"]::placeholder {
+    color: rgb(0, 117, 163);
+    position: absolute;
+    margin-left: 28%;
+    font-family: monospace;
+}
+
+.login_btn {
+    margin-top: 5%;
+    padding: 1%;
+    width: 20%;
+    height: 10%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(64, 104, 165);
+    color: whitesmoke;
+    background-color: rgba(0, 117, 163, 0.35);
+    font-size: 100%;
+    font-family: monospace;
+}
+
+#register-form input[type="text"]::placeholder,
+#register-form input[type="password"]::placeholder {
+    color: rgb(0, 117, 163);
+    text-align: center;
+    position: relative;
+    font-family: monospace;
+}
+
+.register_btn {
+    margin-top: 5%;
+    padding: 1%;
+    width: 50%;
+    height: 10%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(64, 104, 165);
+    color: whitesmoke;
+    background-color: rgba(0, 117, 163, 0.35);
+    font-size: 100%;
+    font-family: monospace;
+}
+
+.povratakGumb {
+    margin-left: 50%;
+    margin-top: 100%;
+}
+
+a {
+    color: blue;
+}
+
+.gdje_su_gumbi {
+    background-color: rgba(0, 117, 163, 0.35);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    overflow: auto;
+    margin-top: 5%;
+}
+
+.gdje_su_gumbi li {
+    list-style-type: none;
+}
+
+.gdje_su_gumbi li .button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 150%;
+    font-family: Papyrus;
+    justify-content: space-between;
+}
+
+.gdje_su_gumbi li .buttonnn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 250%;
+    font-family: Papyrus;
+    justify-content: space-between;
+}
+
+.gdje_su_gumbi li .buttonn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 200%;
+    font-family: Papyrus;
+    justify-content: space-between;
+}
+
+.gdje_su_gumbi li .button:hover {
+    background-color: rgba(0, 117, 163, 0.35);
+}
+
+.gdje_su_gumbi li .buttonnn:hover {
+    background-color: rgba(0, 117, 163, 0.35);
+}
+
+.naslov {
+    color: whitesmoke;
+    font-size: 150%;
+    font-family: Papyrus;
+}
+
+.slika {
+    width: 12%;
+    height: 12%;
+}
+
+.create_btn {
+    background-color: rgba(0, 117, 163, 0.20);
+    cursor: pointer;
+    padding: 1%;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    display: block;
+}
+
+.h1-404,
+.h1-logout {
+    margin-top: 200px;
+}
+
+.p-404 {
+    color: rgba(0, 14, 94, 0.438);
+    text-align: center;
+    font-family: Papyrus;
+}
+
+.nemaStick
+{
+    color: rgba(0, 14, 94, 0.438);
+    text-align: center;
+    font-family: Papyrus;
+    font-size: 400%;
+}
+
+#stickers-container {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+}
+
+.div-sticker {
+    flex-basis: 20%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.div-sticker img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.spremljenoSrce {
+    color: red;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.nespremljenoSrce {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .div-sticker {
+        flex-basis: 100%;
+    }
+}
+
+.stickerTekst {
+    color: rgb(0, 14, 94);
+    text-align: center;
+    font-family: Papyrus;
+}
+
+.searchExplore {
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+.searchExplore .search_btn {
+    margin-top: 3%;
+    width: 15%;
+    height: 10%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(64, 104, 165);
+    color: whitesmoke;
+    background-color: rgba(0, 117, 163, 0.35);
+    font-size: 120%;
+    font-family: Papyrus;
+    margin-left: 20px;
+}
+
+.searchExplore input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+}
+
+.cropper-view-box,
+.cropper-face {
+    border-radius: 50%;
+}
+
+.cropper-view-box {
+    outline: 0;
+}
+
+.text-overlay {
+    position: absolute;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    cursor: move;
+    user-select: none;
+}

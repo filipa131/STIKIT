@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/stil.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <title>Stikit</title>
+</head>
+<body>
+
+    <div class="login">
+        <h1>STIKIT</h1>
+        <br><br>
+    
+        <form id="login-form">
+            <input type="text" name="username" class="txt" placeholder="Username"/>
+            <br><br>
+            <input type="password" name="password" class="txt" placeholder="Password"/>
+            <br><br><br>
+            <button type="submit" class="login_btn">Login</button>
+            &nbsp;&nbsp;&nbsp;
+            <button type="submit" class="login_btn" onclick="location.href='./frontend/register.html'">Register</button>
+        </form>
+    
+        <p class="error-message"></p>
+    </div>
+    
+    <script src="./frontend/javascript/sendLoginForm.js"></script>
+</body>
+</html>
